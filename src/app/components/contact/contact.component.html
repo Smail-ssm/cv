@@ -19,26 +19,26 @@
     </article>
   </div>
 
-  <form class="contact-form" (ngSubmit)="submitContact()">
+  <form class="contact-form" (submit)="submitContact($event)">
     <div class="field-row">
       <label>
         Name
-        <input type="text" name="name" [(ngModel)]="form.name" required />
+        <input type="text" name="name" required />
       </label>
       <label>
         Email
-        <input type="email" name="email" [(ngModel)]="form.email" required />
+        <input type="email" name="email" required />
       </label>
     </div>
 
     <label>
       Subject
-      <input type="text" name="subject" [(ngModel)]="form.subject" required />
+      <input type="text" name="subject" required />
     </label>
 
     <label>
       Message
-      <textarea name="message" [(ngModel)]="form.message" rows="5" required></textarea>
+      <textarea name="message" rows="5" required></textarea>
     </label>
 
     <div class="actions">
