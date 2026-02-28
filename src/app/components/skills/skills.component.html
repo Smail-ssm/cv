@@ -1,0 +1,9 @@
+<section id="skills" class="container section">
+  <h2>Skills Matrix</h2>
+  <div class="grid cards-4">
+    <article class="panel" *ngFor="let skill of skills">
+      <h3>{{ skill.title }}</h3>
+      <p>{{ skill.details }}</p>
+    </article>
+  </div>
+</section>
