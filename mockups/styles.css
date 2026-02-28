@@ -73,6 +73,7 @@ h1 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 0.3rem 0 0.6rem; }
   padding: 0.55rem 1rem;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
 }
 .btn.primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); border: 0; }
 .btn.ghost { background: transparent; }
@@ -123,6 +124,26 @@ input[type="search"] {
 }
 .contact-card h3 { margin: 0 0 0.35rem; font-size: 0.95rem; }
 .contact-card a, .contact-card p { margin: 0; color: #c8d3ff; text-decoration: none; word-break: break-word; }
+
+.contact-form {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(11, 16, 32, 0.34);
+  padding: 1rem;
+}
+.contact-form label { display: block; font-size: 0.9rem; color: #cbd7ff; margin-bottom: 0.75rem; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-top: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: #111935;
+  color: var(--text);
+  font: inherit;
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
 .panel-inner {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -136,6 +157,7 @@ input[type="search"] {
   .hero { grid-template-columns: 1fr; }
   .cards-2 { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .nav { display: none; }
