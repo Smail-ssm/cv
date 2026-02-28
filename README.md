@@ -1,20 +1,12 @@
-# Modern CV (Angular Only)
+# Ismail Mansouri - Modern CV (Angular Only)
 
-Angular-only modern CV website (no Firebase).
+Angular-only modern CV website using local typed data (no Firebase backend usage).
 
-## What is included
+## Included
 - Angular standalone app scaffold in `src/`
-- Section components:
-  - Header
-  - Hero
-  - Experience
-  - Projects
-  - Skills
-  - Contact
-- Local typed models and data files:
-  - `src/app/models/*`
-  - `src/app/data/*`
-- Original static design mockup kept in `mockups/`
+- CV sections as components: Header, Hero, Experience, Projects, Skills, Contact
+- Local typed models/data populated with your CV content
+- Static mockup kept in `mockups/` for quick visual iteration
 
 ## Run locally
 1. Install dependencies:
@@ -27,10 +19,5 @@ Angular-only modern CV website (no Firebase).
    ```
 3. Open `http://localhost:4200`
 
-## Notes
-- No Firebase Auth
-- No Firestore
-- No backend required for initial version
-
 ## Design reference
-Requested inspiration: https://bahajemni.vercel.app/
+https://bahajemni.vercel.app/

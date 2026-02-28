@@ -2,23 +2,18 @@ import { Project } from '../models/project.model';
 
 export const projectsData: Project[] = [
   {
-    title: 'Portfolio Builder',
-    summary: 'Interactive CV generator with theme presets and export modes.',
-    tags: ['Angular', 'TypeScript', 'UI/UX'],
+    title: 'Enterprise HR Management Platform',
+    summary:
+      'Microservices-based HR system built with Spring Boot and Angular, including payroll integration, secure authentication, and workforce tracking.',
+    tags: ['Spring Boot', 'Angular', 'Microservices', 'PostgreSQL'],
     demoUrl: '#',
     codeUrl: '#',
   },
   {
-    title: 'Analytics Dashboard',
-    summary: 'Real-time KPI dashboard for operations teams with role views.',
-    tags: ['Angular', 'RxJS', 'Charts'],
-    demoUrl: '#',
-    codeUrl: '#',
-  },
-  {
-    title: 'Hiring Workflow App',
-    summary: 'Candidate pipeline interface with smart filtering and notes.',
-    tags: ['Angular', 'Forms', 'A11y'],
+    title: 'Workforce Mobile Application',
+    summary:
+      'Flutter app with offline-first synchronization, real-time notifications, and biometric authentication for field teams.',
+    tags: ['Flutter', 'Riverpod/Bloc', 'Offline-first', 'FCM'],
     demoUrl: '#',
     codeUrl: '#',
   },

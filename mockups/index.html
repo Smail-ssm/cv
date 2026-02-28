@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV Mockup - Angular Only</title>
+    <title>Ismail Mansouri - CV Mockup</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div class="container row between center">
-        <div class="brand">AH / CV</div>
+        <div class="brand">ISMAIL MANSOURI</div>
         <nav class="nav">
           <a href="#hero">Home</a>
           <a href="#experience">Experience</a>
@@ -23,113 +23,106 @@
     <main>
       <section id="hero" class="hero container">
         <div>
-          <p class="eyebrow">Angular Developer • Frontend Engineer</p>
-          <h1>Modern CV Website Mockup</h1>
+          <p class="eyebrow">Senior Full Stack Software Engineer</p>
+          <h1>Ismail Mansouri</h1>
           <p class="lead">
-            A clean, recruiter-focused one-page CV. This visual mockup is the template
-            baseline before implementing Angular components.
+            4+ years designing and delivering enterprise web/mobile applications with
+            Spring Boot microservices, Angular frontends, and Flutter mobile apps.
           </p>
+          <p class="meta">Tunis, Tunisia · +216 51 182 717 · ismailmansouri571@gmail.com</p>
           <div class="actions">
-            <button class="btn primary">View Projects</button>
-            <button class="btn">Download CV</button>
-            <button class="btn ghost">Contact</button>
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://linkedin.com/in/ismail-mansouri">LinkedIn</a>
+            <a class="btn" href="https://github.com/ismailmansouri">GitHub</a>
           </div>
         </div>
         <aside class="panel quick-stats">
           <h3>Quick Facts</h3>
           <ul>
-            <li><strong>6+</strong> Years Experience</li>
-            <li><strong>20+</strong> Shipped Features</li>
-            <li><strong>12</strong> Production Projects</li>
-            <li><strong>100%</strong> Angular-Only Stack</li>
+            <li><strong>4+</strong> Years Experience</li>
+            <li><strong>Spring Boot</strong> Microservices</li>
+            <li><strong>Angular</strong> Frontend Development</li>
+            <li><strong>Flutter</strong> Mobile Development</li>
           </ul>
         </aside>
       </section>
 
       <section id="experience" class="container section">
         <div class="section-header">
-          <h2>Experience Timeline</h2>
+          <h2>Professional Experience</h2>
           <div class="filter-pills">
-            <span class="pill active">Leadership</span>
-            <span class="pill">Frontend</span>
-            <span class="pill">Backend</span>
+            <span class="pill active">Architecture</span>
+            <span class="pill">Security</span>
+            <span class="pill">Deployment</span>
           </div>
         </div>
 
         <article class="timeline-item panel">
-          <h3>Senior Frontend Engineer — Product Company</h3>
-          <p class="muted">2022 – Present</p>
+          <h3>Senior Full Stack Developer — RHIS SOFTWARE</h3>
+          <p class="muted">July 2022 – Present · Tunis, Tunisia</p>
           <ul>
-            <li>Led migration to Angular standalone architecture.</li>
-            <li>Improved Core Web Vitals by 34% on flagship pages.</li>
-            <li>Introduced reusable design tokens and UI primitives.</li>
+            <li>Designed and maintained Spring Boot microservices architecture.</li>
+            <li>Implemented auth with Spring Security and JWT/OAuth2 patterns.</li>
+            <li>Integrated external payroll API (Silae) and biometric auth (IDBio).</li>
+            <li>Managed Linux production deployments with Nginx and Caddy.</li>
           </ul>
         </article>
 
         <article class="timeline-item panel">
-          <h3>Frontend Developer — Agency Team</h3>
-          <p class="muted">2019 – 2022</p>
+          <h3>Technical Support Engineer — RHIS SOFTWARE</h3>
+          <p class="muted">December 2020 – July 2022 · Tunis, Tunisia</p>
           <ul>
-            <li>Delivered responsive websites for enterprise clients.</li>
-            <li>Built reusable components for faster team delivery.</li>
+            <li>Led migration of clients from legacy HR systems.</li>
+            <li>Resolved SQL/database issues and provided production support.</li>
           </ul>
         </article>
       </section>
 
       <section id="projects" class="container section">
         <div class="section-header">
-          <h2>Featured Projects</h2>
+          <h2>Projects</h2>
           <input type="search" placeholder="Search project, stack, keyword..." />
         </div>
 
-        <div class="grid cards-3">
+        <div class="grid cards-2">
           <article class="panel project-card">
-            <h3>Portfolio Builder</h3>
-            <p>Interactive CV generator with theme presets and export modes.</p>
+            <h3>Enterprise HR Management Platform</h3>
+            <p>
+              Microservices-based HR system built with Spring Boot and Angular including
+              payroll integration, secure authentication, and workforce tracking.
+            </p>
             <div class="tags">
-              <span>Angular</span><span>TypeScript</span><span>UI/UX</span>
+              <span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span>
             </div>
-            <div class="links"><a href="#">Live</a><a href="#">Code</a></div>
           </article>
 
           <article class="panel project-card">
-            <h3>Analytics Dashboard</h3>
-            <p>Real-time KPI dashboard for operations teams with role views.</p>
+            <h3>Workforce Mobile Application</h3>
+            <p>
+              Flutter app with offline-first synchronization, real-time notifications,
+              and biometric authentication.
+            </p>
             <div class="tags">
-              <span>Angular</span><span>RxJS</span><span>Charts</span>
+              <span>Flutter</span><span>Bloc/Riverpod</span><span>FCM</span>
             </div>
-            <div class="links"><a href="#">Live</a><a href="#">Code</a></div>
-          </article>
-
-          <article class="panel project-card">
-            <h3>Hiring Workflow App</h3>
-            <p>Candidate pipeline interface with smart filtering and notes.</p>
-            <div class="tags">
-              <span>Angular</span><span>Forms</span><span>A11y</span>
-            </div>
-            <div class="links"><a href="#">Live</a><a href="#">Code</a></div>
           </article>
         </div>
       </section>
 
       <section id="skills" class="container section">
-        <h2>Skills Matrix</h2>
-        <div class="grid cards-4">
-          <article class="panel"><h3>Frontend</h3><p>Angular, TypeScript, SCSS</p></article>
-          <article class="panel"><h3>UI</h3><p>Design Systems, Responsive Design</p></article>
-          <article class="panel"><h3>Tooling</h3><p>Vite, Nx, CI/CD</p></article>
-          <article class="panel"><h3>Cloud</h3><p>Static Hosting, Edge Deployments</p></article>
+        <h2>Technical Skills</h2>
+        <div class="grid cards-2">
+          <article class="panel"><h3>Backend</h3><p>Java, Spring Boot, Spring Security, OAuth2/JWT, Apache Camel, Hibernate/JPA, REST, Microservices</p></article>
+          <article class="panel"><h3>Frontend</h3><p>Angular (8–14), TypeScript, RxJS, Reactive Forms</p></article>
+          <article class="panel"><h3>Mobile & DevOps</h3><p>Flutter, Provider/Riverpod/Bloc, Docker, Linux, Nginx, Caddy, CI/CD</p></article>
+          <article class="panel"><h3>Databases</h3><p>PostgreSQL (JSONB), MySQL, SQLite, Firestore</p></article>
         </div>
       </section>
 
       <section id="contact" class="container section contact panel">
-        <h2>Let’s Work Together</h2>
-        <p>Available for frontend engineering roles and Angular consulting.</p>
-        <div class="actions">
-          <button class="btn primary">Email</button>
-          <button class="btn">LinkedIn</button>
-          <button class="btn">GitHub</button>
-        </div>
+        <h2>Education & Languages</h2>
+        <p>ISET Kairouan — Bachelor's Degree in Information Systems Development (2016 – 2020).</p>
+        <p>Languages: English (Professional), French (Professional).</p>
       </section>
     </main>
   </body>

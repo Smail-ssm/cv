@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { profileData } from '../../data/profile.data';
 
 @Component({
   selector: 'app-contact',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {}
+export class ContactComponent {
+  readonly profile = profileData;
+}

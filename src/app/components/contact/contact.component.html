@@ -1,9 +1,13 @@
 <section id="contact" class="container section contact panel">
-  <h2>Let’s Work Together</h2>
-  <p>Available for frontend engineering roles and Angular consulting.</p>
+  <h2>Education & Contact</h2>
+  <p>
+    <strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development
+    (2016 – 2020)
+  </p>
+  <p>Languages: English (Professional), French (Professional).</p>
   <div class="actions">
-    <button class="btn primary">Email</button>
-    <button class="btn">LinkedIn</button>
-    <button class="btn">GitHub</button>
+    <a class="btn primary" [href]="'mailto:' + profile.email">Email</a>
+    <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
   </div>
 </section>
