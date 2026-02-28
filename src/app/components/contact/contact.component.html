@@ -1,13 +1,35 @@
 <section id="contact" class="container section contact panel">
-  <h2>Education & Contact</h2>
-  <p>
-    <strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development
-    (2016 – 2020)
+  <h2>Let’s Connect</h2>
+  <p class="intro">
+    Open to senior full stack opportunities and high-impact product engineering roles.
   </p>
-  <p>Languages: English (Professional), French (Professional).</p>
+
+  <div class="contact-grid">
+    <article class="contact-card">
+      <h3>Email</h3>
+      <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+    </article>
+    <article class="contact-card">
+      <h3>Phone</h3>
+      <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+    </article>
+    <article class="contact-card">
+      <h3>Location</h3>
+      <p>{{ profile.location }}</p>
+    </article>
+  </div>
+
   <div class="actions">
-    <a class="btn primary" [href]="'mailto:' + profile.email">Email</a>
+    <a class="btn primary" [href]="'mailto:' + profile.email">Email Me</a>
     <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
     <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+  </div>
+
+  <div class="education panel-inner">
+    <p>
+      <strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development
+      (2016 – 2020)
+    </p>
+    <p>Languages: English (Professional) · French (Professional)</p>
   </div>
 </section>
