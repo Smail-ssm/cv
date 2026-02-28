@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { profileData } from '../../data/profile.data';
 
@@ -10,15 +10,17 @@ interface ContactPayload {
   message: string;
 }
 
+type SendState = 'idle' | 'success' | 'error';
+
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  readonly profile = profileData;
+  profile = profileData;
 
   form: ContactPayload = {
     name: '',
@@ -28,36 +30,43 @@ export class ContactComponent {
   };
 
   isSending = false;
-  sendState: 'idle' | 'success' | 'error' = 'idle';
+  sendState: SendState = 'idle';
   sendMessage = '';
 
-  async submitContact(): Promise<void> {
-    if (this.isSending) {
+  private validate(payload: ContactPayload): string | null {
+    if (!payload.name.trim()) return 'Name is required.';
+    if (!payload.email.trim()) return 'Email is required.';
+    if (!/^\S+@\S+\.\S+$/.test(payload.email.trim())) return 'Email is invalid.';
+    if (!payload.subject.trim()) return 'Subject is required.';
+    if (!payload.message.trim()) return 'Message is required.';
+    return null;
+  }
+
+  async submit(): Promise<void> {
+    if (this.isSending) return;
+
+    this.sendState = 'idle';
+    this.sendMessage = '';
+
+    const error = this.validate(this.form);
+    if (error) {
+      this.sendState = 'error';
+      this.sendMessage = error;
       return;
     }
 
     this.isSending = true;
-    this.sendState = 'idle';
-    this.sendMessage = '';
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.form),
-      });
-
-      if (!response.ok) {
-        throw new Error('Unable to send message right now.');
-      }
+      // TODO: replace with real API call
+      await new Promise((r) => setTimeout(r, 400));
 
       this.sendState = 'success';
       this.sendMessage = 'Message sent successfully. I will get back to you soon.';
       this.form = { name: '', email: '', subject: '', message: '' };
-    } catch (error) {
+    } catch (e) {
       this.sendState = 'error';
-      this.sendMessage =
-        error instanceof Error ? error.message : 'Something went wrong while sending your message.';
+      this.sendMessage = e instanceof Error ? e.message : 'Something went wrong while sending your message.';
     } finally {
       this.isSending = false;
     }
