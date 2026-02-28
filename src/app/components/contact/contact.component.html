@@ -19,11 +19,39 @@
     </article>
   </div>
 
-  <div class="actions">
-    <a class="btn primary" [href]="'mailto:' + profile.email">Email Me</a>
-    <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
-    <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
-  </div>
+  <form class="contact-form" (ngSubmit)="submitContact()">
+    <div class="field-row">
+      <label>
+        Name
+        <input type="text" name="name" [(ngModel)]="form.name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" [(ngModel)]="form.email" required />
+      </label>
+    </div>
+
+    <label>
+      Subject
+      <input type="text" name="subject" [(ngModel)]="form.subject" required />
+    </label>
+
+    <label>
+      Message
+      <textarea name="message" [(ngModel)]="form.message" rows="5" required></textarea>
+    </label>
+
+    <div class="actions">
+      <button class="btn primary" type="submit" [disabled]="isSending">
+        {{ isSending ? 'Sending...' : 'Send Message' }}
+      </button>
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+
+    <p class="status success" *ngIf="sendState === 'success'">{{ sendMessage }}</p>
+    <p class="status error" *ngIf="sendState === 'error'">{{ sendMessage }}</p>
+  </form>
 
   <div class="education panel-inner">
     <p>
