@@ -1,0 +1,22 @@
+<section id="hero" class="hero container">
+  <div>
+    <p class="eyebrow">{{ profile.role }}</p>
+    <h1>Modern CV Website</h1>
+    <p class="lead">{{ profile.summary }}</p>
+    <div class="actions">
+      <button class="btn primary">View Projects</button>
+      <button class="btn">Download CV</button>
+      <button class="btn">Contact</button>
+    </div>
+  </div>
+
+  <aside class="panel quick-stats">
+    <h3>Quick Facts</h3>
+    <ul>
+      <li><strong>{{ profile.yearsExperience }}</strong> Years Experience</li>
+      <li><strong>{{ profile.shippedFeatures }}</strong> Shipped Features</li>
+      <li><strong>{{ profile.projectsCount }}</strong> Production Projects</li>
+      <li><strong>100%</strong> Angular-Only Stack</li>
+    </ul>
+  </aside>
+</section>
