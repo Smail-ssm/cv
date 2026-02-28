@@ -1,0 +1,18 @@
+<section id="experience" class="container section">
+  <div class="section-header">
+    <h2>Experience Timeline</h2>
+    <div class="filter-pills">
+      <span class="pill active">Leadership</span>
+      <span class="pill">Frontend</span>
+      <span class="pill">Backend</span>
+    </div>
+  </div>
+
+  <article class="panel timeline-item" *ngFor="let item of experience">
+    <h3>{{ item.role }} — {{ item.company }}</h3>
+    <p class="muted">{{ item.period }}</p>
+    <ul>
+      <li *ngFor="let point of item.highlights">{{ point }}</li>
+    </ul>
+  </article>
+</section>

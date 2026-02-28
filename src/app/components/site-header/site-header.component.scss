@@ -1,0 +1,49 @@
+.row {
+  display: flex;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.center {
+  align-items: center;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 2;
+
+  .container {
+    padding: 14px 0;
+  }
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: var(--muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .nav {
+    display: none;
+  }
+}

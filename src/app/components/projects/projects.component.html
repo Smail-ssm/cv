@@ -1,0 +1,20 @@
+<section id="projects" class="container section">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <input type="search" placeholder="Search project, stack, keyword..." />
+  </div>
+
+  <div class="grid cards-3">
+    <article class="panel project-card" *ngFor="let project of projects">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.summary }}</p>
+      <div class="tags">
+        <span *ngFor="let tag of project.tags">{{ tag }}</span>
+      </div>
+      <div class="links">
+        <a [href]="project.demoUrl">Live</a>
+        <a [href]="project.codeUrl">Code</a>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+.contact {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.actions .btn {
+  text-decoration: none;
+}

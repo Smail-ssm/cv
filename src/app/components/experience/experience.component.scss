@@ -1,0 +1,40 @@
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.pill.active {
+  color: white;
+  border-color: #6d8dff;
+}
+
+.timeline-item + .timeline-item {
+  margin-top: 0.7rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 620px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
