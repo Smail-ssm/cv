@@ -1,0 +1,35 @@
+<section id="projects" class="container section">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <input
+      type="search"
+      [value]="searchQuery"
+      (input)="onSearch($any($event.target).value)"
+      placeholder="Search project, stack, keyword..."
+      aria-label="Search projects"
+    />
+  </div>
+
+  <p class="result-summary" *ngIf="searchQuery">
+    Showing {{ filteredProjects.length }} result{{ filteredProjects.length === 1 ? '' : 's' }} for
+    "{{ searchQuery }}"
+  </p>
+
+  <div class="grid cards-3">
+    <article class="panel project-card" *ngFor="let project of filteredProjects">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.summary }}</p>
+      <div class="tags">
+        <span *ngFor="let tag of project.tags">{{ tag }}</span>
+      </div>
+      <div class="links">
+        <a [href]="project.demoUrl">Live</a>
+        <a [href]="project.codeUrl">Code</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="empty-state" *ngIf="filteredProjects.length === 0">
+    No projects matched your search. Try a different keyword like "Angular" or "Spring Boot".
+  </p>
+</section>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ismail Mansouri - CV Mockup</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container row between center">
+        <div class="brand">ISMAIL MANSOURI</div>
+        <nav class="nav">
+          <a href="#hero">Home</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero container">
+        <div>
+          <p class="eyebrow">Senior Full Stack Software Engineer</p>
+          <h1>Ismail Mansouri</h1>
+          <p class="lead">
+            4+ years designing and delivering enterprise web/mobile applications with
+            Spring Boot microservices, Angular frontends, and Flutter mobile apps.
+          </p>
+          <p class="meta">Tunis, Tunisia · +216 51 182 717 · ismailmansouri571@gmail.com</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://linkedin.com/in/ismail-mansouri">LinkedIn</a>
+            <a class="btn" href="https://github.com/ismailmansouri">GitHub</a>
+          </div>
+        </div>
+        <aside class="panel quick-stats">
+          <h3>Quick Facts</h3>
+          <ul>
+            <li><strong>4+</strong> Years Experience</li>
+            <li><strong>Spring Boot</strong> Microservices</li>
+            <li><strong>Angular</strong> Frontend Development</li>
+            <li><strong>Flutter</strong> Mobile Development</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="experience" class="container section">
+        <div class="section-header">
+          <h2>Professional Experience</h2>
+          <div class="filter-pills">
+            <span class="pill active">Architecture</span>
+            <span class="pill">Security</span>
+            <span class="pill">Deployment</span>
+          </div>
+        </div>
+
+        <article class="timeline-item panel">
+          <h3>Senior Full Stack Developer — RHIS SOFTWARE</h3>
+          <p class="muted">July 2022 – Present · Tunis, Tunisia</p>
+          <ul>
+            <li>Designed and maintained Spring Boot microservices architecture.</li>
+            <li>Implemented auth with Spring Security and JWT/OAuth2 patterns.</li>
+            <li>Integrated external payroll API (Silae) and biometric auth (IDBio).</li>
+            <li>Managed Linux production deployments with Nginx and Caddy.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item panel">
+          <h3>Technical Support Engineer — RHIS SOFTWARE</h3>
+          <p class="muted">December 2020 – July 2022 · Tunis, Tunisia</p>
+          <ul>
+            <li>Led migration of clients from legacy HR systems.</li>
+            <li>Resolved SQL/database issues and provided production support.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="projects" class="container section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <input type="search" placeholder="Search project, stack, keyword..." />
+        </div>
+
+        <div class="grid cards-2">
+          <article class="panel project-card">
+            <h3>Enterprise HR Management Platform</h3>
+            <p>
+              Microservices-based HR system built with Spring Boot and Angular including
+              payroll integration, secure authentication, and workforce tracking.
+            </p>
+            <div class="tags">
+              <span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="panel project-card">
+            <h3>Workforce Mobile Application</h3>
+            <p>
+              Flutter app with offline-first synchronization, real-time notifications,
+              and biometric authentication.
+            </p>
+            <div class="tags">
+              <span>Flutter</span><span>Bloc/Riverpod</span><span>FCM</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="container section">
+        <h2>Technical Skills</h2>
+        <div class="grid cards-2">
+          <article class="panel"><h3>Backend</h3><p>Java, Spring Boot, Spring Security, OAuth2/JWT, Apache Camel, Hibernate/JPA, REST, Microservices</p></article>
+          <article class="panel"><h3>Frontend</h3><p>Angular (8–14), TypeScript, RxJS, Reactive Forms</p></article>
+          <article class="panel"><h3>Mobile & DevOps</h3><p>Flutter, Provider/Riverpod/Bloc, Docker, Linux, Nginx, Caddy, CI/CD</p></article>
+          <article class="panel"><h3>Databases</h3><p>PostgreSQL (JSONB), MySQL, SQLite, Firestore</p></article>
+        </div>
+      </section>
+
+      <section id="contact" class="container section contact panel">
+        <h2>Let's Connect</h2>
+        <p class="intro">Open to senior full stack opportunities and high-impact product engineering roles.</p>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Email</h3>
+            <a href="mailto:ismailmansouri571@gmail.com">ismailmansouri571@gmail.com</a>
+          </article>
+          <article class="contact-card">
+            <h3>Phone</h3>
+            <a href="tel:+21651182717">+216 51 182 717</a>
+          </article>
+          <article class="contact-card">
+            <h3>Location</h3>
+            <p>Tunis, Tunisia</p>
+          </article>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="field-row">
+            <label>Name<input type="text" placeholder="Your name" /></label>
+            <label>Email<input type="email" placeholder="Your email" /></label>
+          </div>
+          <label>Subject<input type="text" placeholder="Opportunity / Collaboration" /></label>
+          <label>Message<textarea rows="5" placeholder="Tell me about your project or role"></textarea></label>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Send Message</button>
+            <a class="btn" href="https://linkedin.com/in/ismail-mansouri">LinkedIn</a>
+            <a class="btn" href="https://github.com/ismailmansouri">GitHub</a>
+          </div>
+        </form>
+
+        <div class="panel-inner">
+          <p><strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development (2016 – 2020).</p>
+          <p>Languages: English (Professional) · French (Professional).</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

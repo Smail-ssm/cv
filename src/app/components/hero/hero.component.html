@@ -1,0 +1,23 @@
+<section id="hero" class="hero container">
+  <div>
+    <p class="eyebrow">{{ profile.title }}</p>
+    <h1>{{ profile.name }}</h1>
+    <p class="lead">{{ profile.summary }}</p>
+    <p class="meta">{{ profile.location }} · {{ profile.phone }} · {{ profile.email }}</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+
+  <aside class="panel quick-stats">
+    <h3>Quick Facts</h3>
+    <ul>
+      <li><strong>{{ profile.yearsExperience }}</strong> Years Experience</li>
+      <li><strong>{{ profile.shippedFeatures }}</strong> Enterprise Features</li>
+      <li><strong>{{ profile.projectsCount }}</strong> Core Products</li>
+      <li><strong>English/French</strong> Professional</li>
+    </ul>
+  </aside>
+</section>
