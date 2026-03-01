@@ -6,6 +6,8 @@ Modern CV website built with Angular UI and a serverless contact mailer via Rese
 - Angular standalone app in `src/`
 - CV sections as components: Header, Hero, Experience, Projects, Skills, Contact
 - Local typed models/data populated with CV content
+- SEO essentials: metadata, Open Graph/Twitter tags, canonical URL, JSON-LD Person schema
+- Crawl assets in `src/assets` (`robots.txt`, `sitemap.xml`)
 - Enhanced contact form with send status UX
 - Serverless email endpoint at `api/contact.js` using Resend
 - GitHub Pages deployment workflow (`.github/workflows/deploy-pages.yml`)
@@ -30,6 +32,10 @@ This repo includes an automatic deploy workflow on pushes to `main`.
    - Go to **Settings → Pages**
    - Set **Source** to **GitHub Actions**
 3. The workflow will build Angular with the repo base-href and publish the `dist/cv/browser` artifact.
+
+### Why the previous workflow failed
+If GitHub Actions reports "Dependencies lock file is not found", ensure `package-lock.json` is committed.
+This repository now includes a lock file so `npm ci` works in CI.
 
 ## Resend configuration (for serverless environments)
 Set these environment variables in deployments that support serverless functions (e.g., Vercel):
