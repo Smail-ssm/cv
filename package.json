@@ -11,7 +11,6 @@
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
-    "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^20.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

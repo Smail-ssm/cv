@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 import { profileData } from '../../data/profile.data';
 
 interface ContactPayload {
@@ -10,63 +9,66 @@ interface ContactPayload {
   message: string;
 }
 
-type SendState = 'idle' | 'success' | 'error';
-
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  profile = profileData;
-
-  form: ContactPayload = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  };
+  readonly profile = profileData;
 
   isSending = false;
-  sendState: SendState = 'idle';
+  sendState: 'idle' | 'success' | 'error' = 'idle';
   sendMessage = '';
 
-  private validate(payload: ContactPayload): string | null {
-    if (!payload.name.trim()) return 'Name is required.';
-    if (!payload.email.trim()) return 'Email is required.';
-    if (!/^\S+@\S+\.\S+$/.test(payload.email.trim())) return 'Email is invalid.';
-    if (!payload.subject.trim()) return 'Subject is required.';
-    if (!payload.message.trim()) return 'Message is required.';
-    return null;
-  }
+  async submitContact(event: SubmitEvent): Promise<void> {
+    event.preventDefault();
 
-  async submit(): Promise<void> {
-    if (this.isSending) return;
+    if (this.isSending) {
+      return;
+    }
 
-    this.sendState = 'idle';
-    this.sendMessage = '';
+    const formElement = event.target as HTMLFormElement;
+    const formData = new FormData(formElement);
 
-    const error = this.validate(this.form);
-    if (error) {
+    const payload: ContactPayload = {
+      name: String(formData.get('name') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      subject: String(formData.get('subject') ?? '').trim(),
+      message: String(formData.get('message') ?? '').trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.subject || !payload.message) {
       this.sendState = 'error';
-      this.sendMessage = error;
+      this.sendMessage = 'Please fill in all fields before sending.';
       return;
     }
 
     this.isSending = true;
+    this.sendState = 'idle';
+    this.sendMessage = '';
 
     try {
-      // TODO: replace with real API call
-      await new Promise((r) => setTimeout(r, 400));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Unable to send message right now.');
+      }
 
       this.sendState = 'success';
       this.sendMessage = 'Message sent successfully. I will get back to you soon.';
-      this.form = { name: '', email: '', subject: '', message: '' };
-    } catch (e) {
+      formElement.reset();
+    } catch (error) {
       this.sendState = 'error';
-      this.sendMessage = e instanceof Error ? e.message : 'Something went wrong while sending your message.';
+      const baseMessage =
+        error instanceof Error ? error.message : 'Something went wrong while sending your message.';
+      this.sendMessage = `${baseMessage} If this site is hosted on GitHub Pages, use direct email: ${this.profile.email}`;
     } finally {
       this.isSending = false;
     }

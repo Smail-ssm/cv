@@ -1,91 +1,63 @@
 <section id="contact" class="container section contact panel">
-    <h2>Let’s Connect</h2>
-    <p class="intro">
-        Open to senior full stack opportunities and high-impact product engineering roles.
+  <h2>Let’s Connect</h2>
+  <p class="intro">
+    Open to senior full stack opportunities and high-impact product engineering roles.
+  </p>
+
+  <div class="contact-grid">
+    <article class="contact-card">
+      <h3>Email</h3>
+      <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+    </article>
+    <article class="contact-card">
+      <h3>Phone</h3>
+      <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+    </article>
+    <article class="contact-card">
+      <h3>Location</h3>
+      <p>{{ profile.location }}</p>
+    </article>
+  </div>
+
+  <form class="contact-form" (submit)="submitContact($event)">
+    <div class="field-row">
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+    </div>
+
+    <label>
+      Subject
+      <input type="text" name="subject" required />
+    </label>
+
+    <label>
+      Message
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+
+    <div class="actions">
+      <button class="btn primary" type="submit" [disabled]="isSending">
+        {{ isSending ? 'Sending...' : 'Send Message' }}
+      </button>
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" [href]="profile.github" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+
+    <p class="status success" *ngIf="sendState === 'success'">{{ sendMessage }}</p>
+    <p class="status error" *ngIf="sendState === 'error'">{{ sendMessage }}</p>
+  </form>
+
+  <div class="education panel-inner">
+    <p>
+      <strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development
+      (2016 – 2020)
     </p>
-
-    <div class="contact-grid">
-        <article class="contact-card">
-            <h3>Email</h3>
-            <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
-        </article>
-
-        <article class="contact-card">
-            <h3>Phone</h3>
-            <a [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
-        </article>
-
-        <article class="contact-card" *ngIf="profile.linkedin">
-            <h3>LinkedIn</h3>
-            <a [href]="profile.linkedin" target="_blank" rel="noopener">Open profile</a>
-        </article>
-
-        <article class="contact-card" *ngIf="profile.github">
-            <h3>GitHub</h3>
-            <a [href]="profile.github" target="_blank" rel="noopener">Open profile</a>
-        </article>
-    </div>
-
-    <form class="contact-form panel-inner" (ngSubmit)="submit()" #f="ngForm" novalidate>
-        <div class="form-row">
-            <label>
-                Name
-                <input
-                        name="name"
-                        type="text"
-                        [(ngModel)]="form.name"
-                        required
-                        [disabled]="isSending"
-                />
-            </label>
-
-            <label>
-                Email
-                <input
-                        name="email"
-                        type="email"
-                        [(ngModel)]="form.email"
-                        required
-                        [disabled]="isSending"
-                />
-            </label>
-        </div>
-
-        <label>
-            Subject
-            <input
-                    name="subject"
-                    type="text"
-                    [(ngModel)]="form.subject"
-                    required
-                    [disabled]="isSending"
-            />
-        </label>
-
-        <label>
-            Message
-            <textarea
-                    name="message"
-                    rows="6"
-                    [(ngModel)]="form.message"
-                    required
-                    [disabled]="isSending"
-            ></textarea>
-        </label>
-
-        <button type="submit" [disabled]="isSending || f.invalid">
-            {{ isSending ? 'Sending…' : 'Send message' }}
-        </button>
-
-        <p class="status success" *ngIf="sendState === 'success'">{{ sendMessage }}</p>
-        <p class="status error" *ngIf="sendState === 'error'">{{ sendMessage }}</p>
-    </form>
-
-    <div class="education panel-inner">
-        <p>
-            <strong>ISET Kairouan</strong> — Bachelor's Degree in Information Systems Development
-            (2016 – 2020)
-        </p>
-        <p>Languages: English (Professional) · French (Professional)</p>
-    </div>
+    <p>Languages: English (Professional) · French (Professional)</p>
+  </div>
 </section>
